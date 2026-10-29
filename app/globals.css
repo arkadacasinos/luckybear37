@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+
+@layer components {
+  /* Mangled classes for SEO landing page */
+  .lb7k-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #0b0e14;
+    color: #e2e8f0;
+  }
+  .lb7k-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    height: 60px;
+    background-color: #10141d;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .lb7k-sidebar-rail {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .lb7k-main-wrap {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+    }
+    .lb7k-sidebar-rail {
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      min-width: 220px;
+      background-color: #0e121a;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1rem 0.75rem;
+      gap: 0.35rem;
+    }
+  }
+  /* Mobile drawer via :target */
+  #lb7k-drawer {
+    display: none;
+  }
+  #lb7k-drawer:target {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+  }
+  .lb7k-drawer-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+  }
+  .lb7k-drawer-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    background-color: #0e121a;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1rem;
+    overflow-y: auto;
+    z-index: 2;
+  }
+  .lb7k-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.65rem 1.4rem;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    text-decoration: none;
+  }
+  .lb7k-hero-cta:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+  .lb7k-slot-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #151b26;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    display: block;
+  }
+  .lb7k-slot-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+  .lb7k-article-box {
+    background-color: #0f131c;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.75rem;
+  }
+  .lb7k-tag-chip {
+    display: inline-flex;
+    align-items: center;
+    background-color: #171d28;
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.825rem;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .lb7k-tag-chip:hover {
+    color: #60a5fa;
+    border-color: #3b82f6;
+    background-color: #1e2638;
+  }
+}
